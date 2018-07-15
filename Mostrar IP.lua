@@ -1,0 +1,7 @@
+fdirIP = io.open('dirIP.txt', 'r')
+fmsgbox = io.open('msgbox.vbs', 'w')
+ipv4dir=fdirIP:read()
+ipv4dir=ipv4dir:sub(ipv4dir:find("%d+%p%d+%p%d+%p%d+"))
+fmsgbox:write('msgbox "' .. ipv4dir .. '"' .. ', 64, "Dirección IPv4"')
+fmsgbox:close()
+fdirIP:close()
